@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="left">16dp</dimen>
+    <dimen name="size">30sp</dimen>
+    <dimen name="margin">30dp</dimen>
+    <dimen name="top">20dp</dimen>
+    <dimen name="width">40dp</dimen>
+    <dimen name="leftMargin">10dp</dimen>
+    <dimen name="marginTop">60dp</dimen>
+    <dimen name="marginLeft">10dp</dimen>
+    <dimen name="layout">40dp</dimen>
+    <dimen name="margin1">10dp</dimen>
+</resources>

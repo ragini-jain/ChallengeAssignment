@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"  tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/colour1"
+            android:icon="@drawable/circle1"
+            android:title="" />
+
+        <item android:id="@+id/colour2"
+            android:title=""
+            android:icon="@drawable/circle2"/>
+
+      <item android:id="@+id/colour3"
+        android:title=""
+        android:icon="@drawable/circle3"/>
+
+    </group>
+
+</menu>

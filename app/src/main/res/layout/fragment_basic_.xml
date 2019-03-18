@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/basicLayoutActivity"
+    android:orientation="vertical"
+    tools:context=".BasicFragment">
+
+   <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+       android:layout_centerInParent="true"
+       android:background="@color/colorPrimary">
+       <RelativeLayout
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_centerInParent="true"
+           android:layout_marginTop="@dimen/margin"
+           android:layout_marginLeft="@dimen/margin"
+           android:layout_marginRight="@dimen/margin"
+           android:background="@color/colorAccent">
+            <TextView
+                android:id="@+id/resultTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/top"
+                android:layout_marginTop="@dimen/top"
+                android:text="Result"
+                android:textStyle="bold"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/width"
+                android:layout_marginLeft="@dimen/leftMargin"
+                android:orientation="horizontal"
+                android:weightSum="4">
+
+                <EditText
+                    android:id="@+id/firstNumberEditText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:hint="Enter Number"
+                    android:inputType="number"
+                    />
+                <EditText
+                    android:id="@+id/secondNumberEditText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                   android:hint="Enter Number"
+                    android:layout_weight="2"
+                    android:inputType="number"
+                    />
+            </LinearLayout>
+
+       <LinearLayout
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="@dimen/marginTop"
+           android:layout_marginLeft="@dimen/marginLeft"
+           android:orientation="horizontal"
+           android:paddingTop="@dimen/left">
+
+           <Button
+               android:id="@+id/addButton"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="@string/add" />
+
+           <Button
+               android:id="@+id/subtractButton"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="@string/sub" />
+
+           <Button
+               android:id="@+id/multiplyButton"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="@string/mlt" />
+
+           <Button
+               android:id="@+id/divideButton"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="@string/div" />
+       </LinearLayout>
+       </RelativeLayout>
+   </RelativeLayout>
+</RelativeLayout>

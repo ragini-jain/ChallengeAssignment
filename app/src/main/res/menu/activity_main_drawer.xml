@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"  tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/nav_basic"
+            android:icon="@mipmap/setting"
+            android:title="Basic" />
+
+        <item android:id="@+id/nav_scientific"
+            android:title="Scientific"
+            android:icon="@mipmap/setting"/>
+
+    </group>
+
+
+
+  <!--  <group>
+        <item android:id="@+id/circle1"
+            android:title="Red"
+            android:icon="@drawable/circle1"/>
+
+        <item android:id="@+id/circle2"
+            android:title="yy"
+            android:icon="@drawable/circle2"/>
+
+        <item android:id="@+id/circle3"
+            android:title="gg"
+            android:icon="@drawable/circle3"/>
+
+
+
+    </group>
+-->
+
+</menu>
