@@ -4,23 +4,18 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
-import android.support.v4.content.ContextCompat;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.gl.application.Service.BasicService;
 import com.gl.application.ServiceImpl.BasicServiceImpl;
 
-import java.util.Objects;
-
-import static com.gl.application.R.id.relativeLayout;
 import static java.lang.Double.parseDouble;
 
 public class BasicFragment extends Fragment implements View.OnClickListener {
@@ -33,7 +28,7 @@ public class BasicFragment extends Fragment implements View.OnClickListener {
     private EditText mFirstNumberInput;
     private EditText mSecondNumberInput;
     private TextView mResultTextView;
-    private RelativeLayout mRelativeLayout;
+
 
     BasicService basicService = new BasicServiceImpl();
     public BasicFragment() {
@@ -72,7 +67,7 @@ public class BasicFragment extends Fragment implements View.OnClickListener {
         mFirstNumberInput = view.findViewById(R.id.firstNumberEditText);
         mSecondNumberInput = view.findViewById(R.id.secondNumberEditText);
         mResultTextView = view.findViewById(R.id.resultTextView);
-        mRelativeLayout = view.findViewById(relativeLayout);
+
     }
 
     /**\
@@ -180,24 +175,6 @@ public class BasicFragment extends Fragment implements View.OnClickListener {
     public void onStop() {
         super.onStop();
         shouldRefreshOnResume = true;
-    }
-
-    public  void changeData(int circle1){
-        try {
-            if (Objects.requireNonNull(getActivity()).getIntent() != null) {
-                String color = "#1DC1D6";
-                String info = getActivity().getIntent().getStringExtra("1");
-                if(info.equals(1)) {
-                    mRelativeLayout.setBackground(ContextCompat.getDrawable(getContext(), R.drawable.circle1));
-                }else if(info.equals(1)){
-                    mRelativeLayout.setBackground(ContextCompat.getDrawable(getContext(), R.drawable.circle2));
-                }else{
-                    mRelativeLayout.setBackground(ContextCompat.getDrawable(getContext(), R.drawable.circle3));
-                }
-            }
-        }  catch(Exception e){
-            e.printStackTrace();
-        }
     }
 }
 

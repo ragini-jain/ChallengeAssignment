@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Application</string>
+    <string name="app_name">Calculator</string>
     <string name="navigation_drawer_open">open</string>
     <string name="navigation_drawer_close">closed</string>
 
@@ -12,4 +12,6 @@
     <string name="log">Log</string>
     <string name="ln">ln</string>
     <string name="enter_number">Enter Number</string>
+    <string name="basic">Basic</string>
+    <string name="scientific">Scientific</string>
 </resources>

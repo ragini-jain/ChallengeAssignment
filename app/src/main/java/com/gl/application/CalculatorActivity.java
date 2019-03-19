@@ -1,11 +1,11 @@
 package com.gl.application;
 
-import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
@@ -15,6 +15,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.RelativeLayout;
 
 public class CalculatorActivity extends AppCompatActivity implements View.OnClickListener, BasicFragment.OnFragmentInteractionListener, ScientificFragment.OnFragmentInteractionListener, NavigationView.OnNavigationItemSelectedListener {
 
@@ -24,18 +25,6 @@ public class CalculatorActivity extends AppCompatActivity implements View.OnClic
     private ImageButton mImageButtonOne;
     private ImageButton mImageButtonTwo;
     private ImageButton mImageButtonThree;
-
-    public FragmentRefreshListener getFragmentRefreshListener() {
-        return fragmentRefreshListener;
-    }
-
-    public void setFragmentRefreshListener(FragmentRefreshListener fragmentRefreshListener) {
-        this.fragmentRefreshListener = fragmentRefreshListener;
-    }
-
-    private FragmentRefreshListener fragmentRefreshListener;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,8 +52,8 @@ public class CalculatorActivity extends AppCompatActivity implements View.OnClic
      * View Pager
      */
     private void viewPagerDetailInfo() {
-        mTabLayout.addTab(mTabLayout.newTab().setText("Basic"));
-        mTabLayout.addTab(mTabLayout.newTab().setText("Scientific"));
+        mTabLayout.addTab(mTabLayout.newTab().setText(R.string.basic));
+        mTabLayout.addTab(mTabLayout.newTab().setText(R.string.scientific));
         mTabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
         final ViewPager viewPager = findViewById(R.id.viewPagerId);
         PagerAdapter pagerAdapter = new PagerAdapter(getSupportFragmentManager(),mTabLayout.getTabCount());
@@ -132,20 +121,24 @@ public class CalculatorActivity extends AppCompatActivity implements View.OnClic
 
     @Override
     public void onClick(View v) {
-        Intent intent = new Intent(this, BasicFragment.class);
+        Fragment fragment = (Fragment) getSupportFragmentManager().findFragmentById(R.id.viewPagerId);
+        RelativeLayout mBasicRelativeLayout = fragment.getActivity().findViewById(R.id.relativeLayout);
+        RelativeLayout mRelativeLayout = fragment.getActivity().findViewById(R.id.relativeLayoutScientific);
       switch (v.getId()) {
           case R.id.circle1:
-              intent.putExtra("Color","1");
-              BasicFragment basic_fragment  = new BasicFragment();
-              basic_fragment.changeData( 1);
+
+              mBasicRelativeLayout.setBackgroundColor(getResources().getColor(R.color.RED));
+              mRelativeLayout.setBackgroundColor(getResources().getColor(R.color.RED));
               break;
 
           case R.id.circle2:
-              intent.putExtra("Color","2");
+              mBasicRelativeLayout.setBackgroundColor(getResources().getColor(R.color.GREEN));
+              mRelativeLayout.setBackgroundColor(getResources().getColor(R.color.GREEN));
               break;
 
           case R.id.circle3:
-              intent.putExtra("Color","3");
+              mBasicRelativeLayout.setBackgroundColor(getResources().getColor(R.color.tabColor));
+              mRelativeLayout.setBackgroundColor(getResources().getColor(R.color.tabColor));
               break;
       }
           DrawerLayout drawer =findViewById(R.id.drawer_layout);
@@ -153,8 +146,5 @@ public class CalculatorActivity extends AppCompatActivity implements View.OnClic
 
     }
 
-    public interface FragmentRefreshListener{
-        void onRefresh();
-    }
 
 }

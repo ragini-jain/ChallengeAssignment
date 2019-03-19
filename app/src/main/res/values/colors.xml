@@ -6,4 +6,6 @@
     <color name="colorSimple">#48B9B3B6</color>
     <color name="tabColor">#1DC1D6</color>
     <color name="white">#08D0DDDF</color>
+    <color name="RED">#E21506</color>
+    <color name="GREEN">#27992B</color>
 </resources>
